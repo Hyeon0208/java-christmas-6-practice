@@ -28,10 +28,10 @@ public class VisitDate {
     }
 
     public boolean isXmasDay() {
-        return date.getDayOfWeek().getValue() <= XMAS_DAY;
+        return date.getDayOfMonth() <= XMAS_DAY;
     }
 
     public int getVisitDate() {
-        return date.getDayOfWeek().getValue();
+        return date.getDayOfMonth();
     }
 }

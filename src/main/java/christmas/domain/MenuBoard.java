@@ -26,6 +26,16 @@ public enum MenuBoard {
                 .getAsInt();
     }
 
+    public static boolean isDessertCategory(String menuName) {
+        return DESSERT.menuInfos.stream()
+                .anyMatch(menuInfo -> menuInfo.equalsName(menuName));
+    }
+
+    public static boolean isMainCategory(String menuName) {
+        return MAIN.menuInfos.stream()
+                .anyMatch(menuInfo -> menuInfo.equalsName(menuName));
+    }
+
     public static boolean isExist(String menuName) {
         return EnumSet.allOf(MenuBoard.class).stream()
                 .flatMap(menu -> menu.menuInfos.stream())
