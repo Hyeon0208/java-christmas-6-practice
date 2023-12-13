@@ -36,6 +36,13 @@ public class User {
         return eventInfos;
     }
 
+    public int getTotalBenefit() {
+        return eventInfos.stream()
+                .filter(eventInfo -> !eventInfo.isGiftEvent())
+                .mapToInt(eventInfo -> eventInfo.discount())
+                .sum();
+    }
+
     public boolean isVisitWeekday() {
         return visitDate.isWeekday();
     }

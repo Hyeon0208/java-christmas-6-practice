@@ -39,8 +39,15 @@ public class OutputView {
         printNewLine();
     }
 
-    private void printGiftMenu(User user) {
+    public void printGiftMenu(User user) {
         System.out.println("<증정 메뉴>");
+        if (user.isReceiveGift()) {
+            System.out.printf("%s %d개\n", "샴페인", 1);
+        }
+        if (!user.isReceiveGift()) {
+            System.out.println("없음");
+        }
+        printNewLine();
     }
 
     public void printAppliedEvent(User user) {
