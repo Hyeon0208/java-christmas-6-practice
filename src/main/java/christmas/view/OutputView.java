@@ -54,6 +54,7 @@ public class OutputView {
         System.out.println("<혜택 내역>");
         if (user.notAppliedEvent()) {
             System.out.println("없음");
+            printNewLine();
         }
         if (!user.notAppliedEvent()) {
             StringBuilder appliedEvent = new StringBuilder();
@@ -67,7 +68,12 @@ public class OutputView {
 
     public void printTotalBenefitPrice(User user) {
         System.out.println("<총혜택 금액>");
-        System.out.printf("-%,d원\n", user.getTotalBenefit());
+        if (user.getTotalBenefit() == 0) {
+            System.out.println("0원");
+        }
+        if (user.getTotalBenefit() > 0) {
+            System.out.printf("-%,d원\n", user.getTotalBenefit());
+        }
         printNewLine();
     }
 
