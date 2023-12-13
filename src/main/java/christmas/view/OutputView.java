@@ -2,7 +2,6 @@ package christmas.view;
 
 import christmas.domain.event.EventInfo;
 import christmas.domain.user.OrderInfo;
-import christmas.domain.user.Orders;
 import christmas.domain.user.User;
 
 public class OutputView {
@@ -24,18 +23,18 @@ public class OutputView {
         printNewLine();
     }
 
-    public void printOrdersHistory(Orders orders) {
+    public void printOrdersHistory(User user) {
         StringBuilder orderHistory = new StringBuilder();
         orderHistory.append("<주문 메뉴>").append("\n");
-        for (OrderInfo order : orders.getOrders()) {
+        for (OrderInfo order : user.getOrders()) {
             orderHistory.append(String.format("%s %d개\n", order.getName(), order.getCount()));
         }
         System.out.println(orderHistory);
     }
 
-    public void printTotalOrderPrice(Orders orders) {
+    public void printTotalOrderPrice(User user) {
         System.out.println("<할인 전 총주문 금액>");
-        System.out.printf("%,d원\n", orders.getTotalOrderPrice());
+        System.out.printf("%,d원\n", user.getTotalOrderPrice());
         printNewLine();
     }
 
