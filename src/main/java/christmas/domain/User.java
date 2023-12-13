@@ -42,6 +42,14 @@ public class User {
                 .sum();
     }
 
+    public int getActualPaymentPrice() {
+        int actualDiscountPrice = eventInfos.stream()
+                .filter(eventInfo -> !eventInfo.isGiftEvent())
+                .mapToInt(eventInfo -> eventInfo.discount())
+                .sum();
+        return orders.getTotalOrderPrice() - actualDiscountPrice;
+    }
+
     public boolean isVisitWeekday() {
         return visitDate.isWeekday();
     }

@@ -35,6 +35,6 @@ public class PromotionController {
         outputView.printGiftMenu(user);
         outputView.printAppliedEvent(user);
         outputView.printTotalBenefitPrice(user);
-
+        outputView.printActualPaymentPrice(user);
     }
 }
