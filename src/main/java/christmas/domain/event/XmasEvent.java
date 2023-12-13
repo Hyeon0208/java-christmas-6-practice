@@ -1,6 +1,6 @@
 package christmas.domain.event;
 
-import christmas.domain.User;
+import christmas.domain.user.User;
 
 public class XmasEvent implements Event {
     private final String name = "크리스마스 디데이 할인";

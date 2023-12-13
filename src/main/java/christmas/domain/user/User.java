@@ -1,4 +1,4 @@
-package christmas.domain;
+package christmas.domain.user;
 
 import christmas.domain.event.EventInfo;
 import java.util.ArrayList;

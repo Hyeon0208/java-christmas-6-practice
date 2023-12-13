@@ -1,6 +1,7 @@
-package christmas.domain;
+package christmas.domain.user;
 
 import christmas.constant.Separator;
+import christmas.domain.menu.MenuBoard;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;

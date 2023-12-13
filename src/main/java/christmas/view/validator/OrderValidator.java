@@ -1,7 +1,7 @@
 package christmas.view.validator;
 
 import christmas.constant.Separator;
-import christmas.domain.MenuBoard;
+import christmas.domain.menu.MenuBoard;
 import christmas.util.StringConvertor;
 import christmas.view.ErrorView;
 import java.util.Arrays;

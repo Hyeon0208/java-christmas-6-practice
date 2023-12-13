@@ -1,6 +1,6 @@
 package christmas.domain.event;
 
-import christmas.domain.User;
+import christmas.domain.user.User;
 import java.util.EnumSet;
 
 public enum Badge {

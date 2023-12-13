@@ -1,4 +1,4 @@
-package christmas.domain;
+package christmas.domain.menu;
 
 public class MenuInfo {
     private static final int MENU_NAME_INDEX = 0;

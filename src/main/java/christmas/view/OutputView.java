@@ -1,9 +1,9 @@
 package christmas.view;
 
-import christmas.domain.OrderInfo;
-import christmas.domain.Orders;
-import christmas.domain.User;
 import christmas.domain.event.EventInfo;
+import christmas.domain.user.OrderInfo;
+import christmas.domain.user.Orders;
+import christmas.domain.user.User;
 
 public class OutputView {
 

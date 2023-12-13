@@ -1,10 +1,10 @@
 package christmas.controller;
 
-import christmas.domain.Orders;
-import christmas.domain.User;
-import christmas.domain.VisitDate;
 import christmas.domain.event.Badge;
 import christmas.domain.event.EventApplicator;
+import christmas.domain.user.Orders;
+import christmas.domain.user.User;
+import christmas.domain.user.VisitDate;
 import christmas.view.OutputView;
 import christmas.view.handler.InputHandler;
 

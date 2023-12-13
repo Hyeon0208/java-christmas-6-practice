@@ -1,7 +1,7 @@
 package christmas.domain.event;
 
-import christmas.domain.MenuBoard;
-import christmas.domain.User;
+import christmas.domain.menu.MenuBoard;
+import christmas.domain.user.User;
 
 public class WeekendEvent implements Event {
     private final String name = "주말 할인";
