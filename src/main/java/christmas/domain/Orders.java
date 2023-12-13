@@ -20,6 +20,15 @@ public class Orders {
         return new Orders(orders);
     }
 
+    public int getTotalOrderPrice() {
+        int totalOrderPrice = 0;
+        for (OrderInfo order : orders) {
+            int menuPrice = MenuBoard.getMenuPrice(order.getName());
+            totalOrderPrice += (menuPrice * order.getCount());
+        }
+        return totalOrderPrice;
+    }
+
     public List<OrderInfo> getOrders() {
         return orders;
     }
