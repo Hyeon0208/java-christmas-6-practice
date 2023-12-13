@@ -1,5 +1,6 @@
 package christmas.controller;
 
+import christmas.domain.Orders;
 import christmas.view.OutputView;
 import christmas.view.handler.InputHandler;
 
@@ -19,5 +20,9 @@ public class PromotionController {
 
         outputView.printOrderInputMessage();
         String orderMenus = inputHandler.receiveValidatedOrderMenus();
+
+        Orders orders = Orders.from(orderMenus);
+        outputView.printBenefitPreviewMessage();
+        outputView.printOrdersHistory(orders);
     }
 }
