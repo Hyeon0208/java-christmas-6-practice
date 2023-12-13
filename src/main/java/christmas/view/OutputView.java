@@ -19,7 +19,7 @@ public class OutputView {
 
     public void printBenefitPreviewMessage() {
         System.out.println("12월 26일에 우테코 식당에서 받을 이벤트 혜택 미리 보기!");
-        System.out.println();
+        printNewLine();
     }
 
     public void printOrdersHistory(Orders orders) {
@@ -29,5 +29,15 @@ public class OutputView {
             orderHistory.append(String.format("%s %d개\n", order.getName(), order.getCount()));
         }
         System.out.println(orderHistory);
+    }
+
+    public void printTotalOrderPrice(Orders orders) {
+        System.out.println("<할인 전 총주문 금액>");
+        System.out.printf("%,d원\n", orders.getTotalOrderPrice());
+        printNewLine();
+    }
+
+    public void printNewLine() {
+        System.out.println();
     }
 }

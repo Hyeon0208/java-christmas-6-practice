@@ -24,5 +24,6 @@ public class PromotionController {
         Orders orders = Orders.from(orderMenus);
         outputView.printBenefitPreviewMessage();
         outputView.printOrdersHistory(orders);
+        outputView.printTotalOrderPrice(orders);
     }
 }
