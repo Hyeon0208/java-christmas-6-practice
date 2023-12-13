@@ -17,6 +17,15 @@ public enum MenuBoard {
         this.menuInfos = menuInfos;
     }
 
+    public static int getMenuPrice(String menuName) {
+        return EnumSet.allOf(MenuBoard.class).stream()
+                .flatMap(menu -> menu.menuInfos.stream())
+                .filter(menuInfo -> menuInfo.equalsName(menuName))
+                .mapToInt(menuInfo -> menuInfo.getPrice())
+                .findFirst()
+                .getAsInt();
+    }
+
     public static boolean isExist(String menuName) {
         return EnumSet.allOf(MenuBoard.class).stream()
                 .flatMap(menu -> menu.menuInfos.stream())
