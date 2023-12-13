@@ -1,6 +1,7 @@
 package christmas.view;
 
 import camp.nextstep.edu.missionutils.Console;
+import christmas.view.validator.OrderValidator;
 import christmas.view.validator.VisitDateValidator;
 
 public class InputView {
@@ -9,5 +10,11 @@ public class InputView {
         String visitDate = Console.readLine();
         VisitDateValidator.validate(visitDate);
         return visitDate;
+    }
+
+    public String inputOrderMenus() {
+        String orderMenus = Console.readLine();
+        OrderValidator.validate(orderMenus);
+        return orderMenus;
     }
 }

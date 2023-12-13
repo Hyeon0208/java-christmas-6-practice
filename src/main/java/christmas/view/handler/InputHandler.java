@@ -19,6 +19,10 @@ public class InputHandler {
         return StringConvertor.convertToInt(visitDate);
     }
 
+    public String receiveValidatedOrderMenus() {
+        return receiveValidatedInput(inputView::inputOrderMenus);
+    }
+
     private <T> T receiveValidatedInput(Supplier<T> inputView) {
         while (true) {
             try {

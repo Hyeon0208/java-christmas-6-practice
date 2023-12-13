@@ -16,5 +16,8 @@ public class PromotionController {
         outputView.printGreetingMessage();
         outputView.printVisitDateInputMessage();
         int visitDate = inputHandler.receiveValidatedVisitDate();
+
+        outputView.printOrderInputMessage();
+        String orderMenus = inputHandler.receiveValidatedOrderMenus();
     }
 }

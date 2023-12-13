@@ -1,7 +1,8 @@
 package christmas.constant;
 
 public enum Separator {
-    COMMA(",");
+    COMMA(","),
+    HYPHEN("-");
 
     private final String separator;
 
