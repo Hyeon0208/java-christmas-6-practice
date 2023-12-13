@@ -3,6 +3,7 @@ package christmas.controller;
 import christmas.domain.Orders;
 import christmas.domain.User;
 import christmas.domain.VisitDate;
+import christmas.domain.event.Badge;
 import christmas.domain.event.EventApplicator;
 import christmas.view.OutputView;
 import christmas.view.handler.InputHandler;
@@ -36,5 +37,8 @@ public class PromotionController {
         outputView.printAppliedEvent(user);
         outputView.printTotalBenefitPrice(user);
         outputView.printActualPaymentPrice(user);
+
+        String badgeName = Badge.getBadgeBasedOnConditions(user);
+        outputView.printBadge(badgeName);
     }
 }
