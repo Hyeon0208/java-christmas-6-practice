@@ -38,7 +38,6 @@ public class User {
 
     public int getTotalBenefit() {
         return eventInfos.stream()
-                .filter(eventInfo -> !eventInfo.isGiftEvent())
                 .mapToInt(eventInfo -> eventInfo.discount())
                 .sum();
     }

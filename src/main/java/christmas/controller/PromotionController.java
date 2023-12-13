@@ -32,7 +32,9 @@ public class PromotionController {
         outputView.printTotalOrderPrice(orders);
 
         EventApplicator.apply(user);
+        outputView.printGiftMenu(user);
         outputView.printAppliedEvent(user);
+        outputView.printTotalBenefitPrice(user);
 
     }
 }
