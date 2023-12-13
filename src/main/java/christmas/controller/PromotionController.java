@@ -19,25 +19,40 @@ public class PromotionController {
 
     public void start() {
         outputView.printGreetingMessage();
-        outputView.printVisitDateInputMessage();
-        VisitDate visitDate = VisitDate.from(inputHandler.receiveValidatedVisitDate());
+        User user = setUpUser();
+        showUserBenefitPreview(user);
+        showReceivedBadge(user);
+    }
 
+    private User setUpUser() {
+        VisitDate visitDate = setUpVisitDate();
+        Orders orders = setUpOrders();
+        return new User(orders, visitDate);
+    }
+
+    private VisitDate setUpVisitDate() {
+        outputView.printVisitDateInputMessage();
+        return VisitDate.from(inputHandler.receiveValidatedVisitDate());
+    }
+
+    private Orders setUpOrders() {
         outputView.printOrderInputMessage();
         String orderMenus = inputHandler.receiveValidatedOrderMenus();
+        return Orders.from(orderMenus);
+    }
 
-        Orders orders = Orders.from(orderMenus);
-        User user = new User(orders, visitDate);
-
+    private void showUserBenefitPreview(User user) {
         outputView.printBenefitPreviewMessage();
-        outputView.printOrdersHistory(orders);
-        outputView.printTotalOrderPrice(orders);
-
+        outputView.printOrdersHistory(user);
+        outputView.printTotalOrderPrice(user);
         EventApplicator.apply(user);
         outputView.printGiftMenu(user);
         outputView.printAppliedEvent(user);
         outputView.printTotalBenefitPrice(user);
         outputView.printActualPaymentPrice(user);
+    }
 
+    private void showReceivedBadge(User user) {
         String badgeName = Badge.getBadgeBasedOnConditions(user);
         outputView.printBadge(badgeName);
     }
