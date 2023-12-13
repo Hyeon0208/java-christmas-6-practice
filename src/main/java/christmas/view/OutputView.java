@@ -2,6 +2,8 @@ package christmas.view;
 
 import christmas.domain.OrderInfo;
 import christmas.domain.Orders;
+import christmas.domain.User;
+import christmas.domain.event.EventInfo;
 
 public class OutputView {
 
@@ -35,6 +37,25 @@ public class OutputView {
         System.out.println("<할인 전 총주문 금액>");
         System.out.printf("%,d원\n", orders.getTotalOrderPrice());
         printNewLine();
+    }
+
+    private void printGiftMenu(User user) {
+        System.out.println("<증정 메뉴>");
+    }
+
+    public void printAppliedEvent(User user) {
+        System.out.println("<혜택 내역>");
+        if (user.notAppliedEvent()) {
+            System.out.println("없음");
+        }
+        if (!user.notAppliedEvent()) {
+            StringBuilder appliedEvent = new StringBuilder();
+            for (EventInfo eventInfo : user.getAppliedEventInfos()) {
+                appliedEvent.append(String.format("%s: -%,d원", eventInfo.name(), eventInfo.discount()))
+                        .append("\n");
+            }
+            System.out.println(appliedEvent);
+        }
     }
 
     public void printNewLine() {
